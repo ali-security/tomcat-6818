@@ -60,6 +60,7 @@ jobs:
           output/build/logs/TEST*.txt
         retention-days: 7
     - name: Upload jars
+      if: always()
       uses: actions/upload-artifact@v4
       with:
         name: JDK${{ matrix.java }}-${{ matrix.os }}-jars
